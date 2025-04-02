@@ -1,0 +1,90 @@
+Lamp interface
+ 1. Place the library file libjnielc.so in the project
+ directory.
+ 2. The interface file jnielc.java, please note that the
+ package name of this file cannot be changed,
+ It must be the com. example. elcapi, otherwise it will not
+ be called. Therefore, in the Android studio project, it is
+ necessary to create this package name and then put this file
+ in it.
+ 3. Due to the support of RGB color adjustment function in
+ the light interface, if calling the red, green, and blue
+ monochrome, other colors need to be turned off.
+ 3.1 Red
+ jnielc.seekstart();
+ jnielc.ledseek(seek_red, 15);
+ jnielc.ledseek(seek_green, 0);
+ jnielc.ledseek(seek_blue, 0);
+ jnielc.seekstop();
+ 3.2 Green
+ jnielc.seekstart();
+ jnielc.ledseek(seek_red, 0);
+ jnielc.ledseek(seek_green, 15);
+ jnielc.ledseek(seek_blue, 0);
+ jnielc.seekstop();
+ 3.3 Blue
+ jnielc.seekstart();
+ jnielc.ledseek(seek_red, 0);
+ jnielc.ledseek(seek_green, 0);
+jnielc.ledseek(seek_blue, 15);
+ jnielc.seekstop();
+ 1、Interface for controlling red lights
+ Among them, the parameter seek_ Red is the control flag, defined as
+ The parameter progress is the brightness level of the lamp, ranging from 0 to 15
+ For
+ example
+ It means the red light is on, and the brightness level is 10
+ Pay attention to calling first
+ Then we call
+ Last call
+ 2、Interface for controlling green light
+ Among them, the parameter seek_ Green is the control flag, defined as
+ The parameter progress is the brightness level of the lamp, ranging from 0 to 15
+ For example
+It means the green light is on, and the brightness level is 10
+ Pay attention to calling first
+ Then we call
+ Last call
+ 3、Interface for controlling the blue light
+ Among them, the parameter seek_ Blue is a control flag defined as
+ The parameter progress is the brightness level of the lamp, ranging from 0 to 15
+ For example
+ It means a bright blue light with a brightness level of 10
+ Pay attention to calling first
+ Then we call
+ Last call
+ Relay call
+ 1、Library file libgpio_ Control. so placed in the project
+ directory。
+2、The interface file gpioJni.java, please note that the
+ package name of this file cannot be changed， It must be
+ com.sys.gpio, otherwise it will not be called. Therefore,
+ in the Android studio project, it is necessary to create
+ this package name and then put this file in it。
+3、Relay 2 (IN2)：
+gpioJni.ioctl_gpio(2, 0, 1); Set High Level
+ gpioJni.ioctl_gpio(2, 0, 0); Set Low Level
+ gpioJni.ioctl_gpio(2, 1, 1); Obtain the return value of
+ level status as 0 1
+ 4、Relay 1 (IN1)：
+gpioJni.ioctl_gpio(3, 0, 1);
+ gpioJni.ioctl_gpio(3, 0, 0);
+ gpioJni.ioctl_gpio(3, 1, 1)
+ IO port call
+ 1、Library file libgpio_ Control. so placed in the project
+ directory。
+2、The interface file gpioJni.java, please note that the
+ package name of this file cannot be changed， It must be
+ com.sys.gpio, otherwise it will not be called. Therefore,
+in the Android studio project, it is necessary to create
+ this package name and then put this file in it。
+3、IO-1
+ gpioJni.ioctl_gpio(0, 0, 1); Set High Level
+ gpioJni.ioctl_gpio(0, 0, 0); Set Low Level
+ gpioJni.ioctl_gpio(0, 1, 1); Obtain the return value
+ of level status as 0 1
+ 4、IO-2
+ gpioJni.ioctl_gpio(1, 0, 1); Set High Level
+ gpioJni.ioctl_gpio(1, 0, 0); Set Low Level
+ gpioJni.ioctl_gpio(1, 1, 1); Obtain the return value of
+ level status as 0 1
