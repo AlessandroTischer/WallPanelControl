@@ -88,3 +88,17 @@ in the Android studio project, it is necessary to create
  gpioJni.ioctl_gpio(1, 0, 0); Set Low Level
  gpioJni.ioctl_gpio(1, 1, 1); Obtain the return value of
  level status as 0 1
+
+ Temperature and humidity
+ 1、Currently, temperature and humidity are obtained based
+ on getevent data
+ 2、temperature：event5(The machine with light sensitivity
+ is event 7)
+ 3、humidity：event4(The machine with light sensitivity is
+ event 6)
+4、
+Using VirtualTerminal to start a thread to read the return
+ value
+ VirtualTerminal mVirtualTerminal = new
+ VirtualTerminal("1", "getevent-l", "./");
+ mVirtualTerminal.setListener（）；

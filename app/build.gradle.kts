@@ -62,4 +62,5 @@ dependencies {
     debugImplementation(libs.androidx.ui.test.manifest)
     implementation(libs.nanohttpd)
     implementation(libs.androidx.work.runtime)
+    implementation("com.github.skydoves:colorpickerview:2.3.0")
 }
