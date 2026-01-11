@@ -34,9 +34,10 @@ The tablet I'm using is [this](https://www.alibaba.com/product-detail/9-7-Inch-A
 
 ### Supported Devices
 
-| Device Model | Status       |
-|--------------|--------------|
-| SMT97        | Supported|
+| Device Model | Status    |
+|--------------|-----------|
+| SMT97        | Supported |
+| SMT101       | Supported |
 
 ---
 
